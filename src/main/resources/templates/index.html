@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Control de productos</title>
+<!-- Enlace a Bootstrap para mejorar la apariencia de la página -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -10,18 +11,20 @@
 	crossorigin="anonymous">
 </head>
 <body>
+
+<!-- Barra de navegación -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="/">Control de productos</a>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link" href="/nuevo">Agregarproducto</a></li>
+					<li class="nav-item"><a class="nav-link" href="/nuevo">Agregar producto</a></li>
 				</ul>
 
 			</div>
 		</div>
 	</nav>
-
+<!-- Formulario de búsqueda de productos -->
 	<br>
 	<div class="container text-center">
 		<form class="form-inline" th:action="@{/}">
@@ -42,6 +45,7 @@
 			</div>
 		</form>
 		<br>
+			<!-- Tabla para mostrar la lista de productos -->
 		<table class="table">
 			<thead class="table-dark">
 				<tr>
@@ -50,7 +54,7 @@
 					<th scope="col">Descripcion</th>
 					<th scope="col">Nombre</th>
 					<th scope="col">Precio</th>
-					<th scope="col">Accciones</th>
+					<th scope="col">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -70,10 +74,10 @@
 		</table>
 
 	</div>
-
+  <!-- Script para limpiar el filtro de búsqueda -->
     <script type="text/javascript">
     function limpiarCampos(){
-    	window.location= '/';
+    	window.location= '/'; 
     }
     </script>
 

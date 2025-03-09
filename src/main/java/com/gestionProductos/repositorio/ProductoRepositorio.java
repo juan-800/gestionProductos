@@ -10,9 +10,14 @@ import org.springframework.stereotype.Repository;
 import com.gestionProductos.entidades.Producto;
 @Repository
 
+/**
+ Interfaz que actúa como repositorio para la entidad Producto.
+  Extiende JpaRepository para proporcionar métodos CRUD y poder hacer consultas personalizadas.
+ */
+
 public interface ProductoRepositorio extends JpaRepository<Producto, Long> {
     @Query("SELECT p FROM Producto p WHERE " +
-           "LOWER(CONCAT(p.descripcion, ' ', p.nombre, ' ', p.precio)) " +
+           "LOWER(CONCAT(p.descripcion, ' ', p.nombre, ' ')) " +
            "LIKE LOWER(CONCAT('%', :palabraClave, '%'))")
     List<Producto> findAll(@Param("palabraClave") String palabraClave);
 }

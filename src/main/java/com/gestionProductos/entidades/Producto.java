@@ -7,8 +7,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 
+
+/**
+ * Clase que representa la entidad Producto en la base de datos.
+ */
+
 @Entity
-@Table(name = "producto")
+@Table(name = "producto") // Define el nombre de la tabla en la base de datos.
 public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +31,9 @@ public class Producto {
 	@Column(nullable = false)
 	private int cantidad;
 
+	
+	//Constructor con parámetros para inicializar un objeto Producto.
+	
 	public Producto(Long id, String nombre, String descripcion, float precio, int cantidad) {
 		super();
 		this.id = id;
@@ -35,6 +43,9 @@ public class Producto {
 		this.cantidad = cantidad;
 	}
 
+	 // Métodos getter y setter para acceder y modificar los atributos del producto.
+	
+	
 	public Producto() {
 		super();
 	}
